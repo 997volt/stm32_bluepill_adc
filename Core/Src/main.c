@@ -118,7 +118,8 @@ int main(void)
 	  HAL_ADC_Start(&hadc1);
 	  HAL_Delay(500);
 	  uint32_t value = HAL_ADC_GetValue(&hadc1);
-	  printf("adc = %d \n", (int)value);
+	  float result = 3.3 * 1000 * (float)value / 4095 ;
+	  printf("adc = %d mV \n", (int)result);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
