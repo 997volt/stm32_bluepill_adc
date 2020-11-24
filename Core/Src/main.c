@@ -59,7 +59,21 @@ static void MX_ADC1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void send_string(char* s)
+{
+	HAL_UART_Transmit(&huart1, (uint8_t*)s, strlen(s), 1000);
+}
 
+void send_char(char c)
+{
+	HAL_UART_Transmit(&huart1, (uint8_t*)&c, 1, 1000);
+}
+
+int __io_putchar(int ch)
+{
+	send_char(ch);
+	return ch;
+}
 /* USER CODE END 0 */
 
 /**
@@ -101,7 +115,10 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  HAL_ADC_Start(&hadc1);
+	  HAL_Delay(500);
+	  uint32_t value = HAL_ADC_GetValue(&hadc1);
+	  printf("adc = %d \n", (int)value);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
