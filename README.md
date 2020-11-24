@@ -1,8 +1,8 @@
-# stm32_bluepill_template
+# stm32_bluepill_adc
 
-...
+Analog to digital converter simple usage with result sending by serial port.
 
-Created in STM32CubeIDE for STM32Duino "Blue Pill" HW-267 based on STM32F103CBT6 MCU. 
+Created in STM32CubeIDE for STM32 "Blue Pill" HW-267 based on STM32F103CBT6 MCU. 
 
 ### To run/modify this project locally:
 
